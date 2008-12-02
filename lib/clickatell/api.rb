@@ -27,7 +27,7 @@ module Clickatell
     
     # Creates a new API instance using the specified +auth options+.
     # +auth_options+ is a hash containing either a :session_id or 
-    # :username, :password and :api_key.
+    # :username, :password and :api_id.
     #
     # Some API calls (authenticate, ping etc.) do not require any 
     # +auth_options+. +auth_options+ can be updated using the accessor methods.
@@ -110,7 +110,7 @@ module Clickatell
         elsif @auth_options[:api_id]
           { :user => @auth_options[:username],
             :password => @auth_options[:password],
-            :api_id => @auth_options[:api_key] }
+            :api_id => @auth_options[:api_id] }
         else
           {}
         end
